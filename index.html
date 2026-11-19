@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفاف العريس أحمد اسماعيل</title>
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل خطوط عربية ملكية فاخرة من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- مكتبة Tone.js لتوليد موسيقى/زفة هادئة بدون روابط خارجية -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <style>
+        /* تعريف الألوان والخطوط الأساسية */
+        :root {
+            --gold-primary: #b8860b;
+            --gold-light: #e5c158;
+            --gold-dark: #7a5508;
+            --cream-bg: #fdf8ee;
+            --cream-card: #fffaf0;
+            --brown-text: #3d2608;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f4ebd9;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(229, 193, 88, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.18) 0%, transparent 40%),
+                repeating-linear-gradient(45deg, rgba(184, 134, 11, 0.03) 0px, rgba(184, 134, 11, 0.03) 2px, transparent 2px, transparent 10px);
+            color: var(--brown-text);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .font-amiri {
+            font-family: 'Amiri', serif;
+        }
+
+        .font-ruqaa {
+            font-family: 'Aref Ruqaa', serif;
+        }
+
+        /* تأثير الورق الفاخر للبطاقة */
+        .royal-card {
+            background: linear-gradient(145deg, #fffdf9 0%, #f9eed9 50%, #f3e2c2 100%);
+            box-shadow: 
+                0 25px 50px -12px rgba(61, 38, 8, 0.28),
+                0 0 0 1px rgba(184, 134, 11, 0.3),
+                inset 0 0 60px rgba(218, 165, 32, 0.12);
+            position: relative;
+            animation: cardEntrance 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes cardEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(35px) scale(0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* إطار ذهبي مزدوج مزخرف */
+        .gold-double-border {
+            border: 2px solid #c59b27;
+            position: relative;
+        }
+        .gold-double-border::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border: 1px solid rgba(197, 155, 39, 0.55);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        /* تدرج ذهبي للنصوص البارزة */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #7a5508 0%, #c59b27 45%, #6b4805 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 4px rgba(184, 134, 11, 0.15);
+        }
+
+        /* إطار اسم العريس الملكي */
+        .groom-banner {
+            background: linear-gradient(90deg, rgba(255,250,240,0.6) 0%, rgba(255,248,231,0.95) 50%, rgba(255,250,240,0.6) 100%);
+            border-top: 2px solid #c59b27;
+            border-bottom: 2px solid #c59b27;
+            box-shadow: 0 10px 25px -5px rgba(184, 134, 11, 0.18), inset 0 0 20px rgba(229, 193, 88, 0.25);
+            position: relative;
+        }
+
+        /* لمعة ذهبية متحركة */
+        .shimmer-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transform: skewX(-25deg);
+            animation: shimmer 5s infinite;
+        }
+        @keyframes shimmer {
+            0% { left: -150%; }
+            35% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* شريط الخاتمة الذهبي */
+        .gold-ribbon {
+            background: linear-gradient(135deg, #9c7212 0%, #d4af37 50%, #8a620b 100%);
+            box-shadow: 0 4px 12px rgba(122, 85, 8, 0.3);
+        }
+
+        /* بتلات الورد والنجوم الذهبية المتساقطة */
+        .petal {
+            position: fixed;
+            top: -10%;
+            z-index: 40;
+            pointer-events: none;
+            user-select: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.85;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(115vh) rotate(360deg) translateX(40px);
+                opacity: 0;
+            }
+        }
+
+        /* نبض خفيف لخواتم الزفاف */
+        .rings-float {
+            animation: floatRings 4s ease-in-out infinite;
+        }
+        @keyframes floatRings {
+            0%, 100% { transform: translateY(0px) rotate(-3deg); }
+            50% { transform: translateY(-5px) rotate(3deg); }
+        }
+
+        /* أزرار تفاعلية فاخرة */
+        .btn-royal {
+            background: linear-gradient(135deg, #a67c14 0%, #d4af37 50%, #8f680c 100%);
+            color: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(166, 124, 20, 0.35);
+        }
+        .btn-royal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(166, 124, 20, 0.5);
+            filter: brightness(1.06);
+        }
+        .btn-royal:active {
+            transform: translateY(0);
+        }
+
+        .btn-outline-royal {
+            background: rgba(255, 252, 245, 0.85);
+            border: 1.5px solid #c59b27;
+            color: #5c3a0b;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-royal:hover {
+            background: #c59b27;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(197, 155, 39, 0.3);
+        }
+
+        /* ================= تنسيقات بوابة الدعوة الملكية (ضلفين الباب) ================= */
+        .door-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            perspective: 1800px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: opacity 0.8s ease 1.1s, visibility 0.8s ease 1.1s;
+        }
+
+        .door-overlay.opened {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* ضلفة الباب الواحدة */
+        .door-panel {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(160deg, #fffdf8 0%, #f5e6c8 45%, #e8cfa0 100%);
+            box-shadow: inset 0 0 80px rgba(138, 98, 11, 0.25);
+            transition: transform 1.6s cubic-bezier(0.25, 1, 0.35, 1);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* الضلفة اليمنى تفتح للخارج يميناً */
+        .door-right {
+            transform-origin: right center;
+            border-left: 2px solid #b8860b;
+            box-shadow: -8px 0 30px rgba(61, 38, 8, 0.25), inset 0 0 70px rgba(184, 134, 11, 0.2);
+        }
+
+        /* الضلفة اليسرى تفتح للخارج يساراً */
+        .door-left {
+            transform-origin: left center;
+            border-right: 2px solid #b8860b;
+            box-shadow: 8px 0 30px rgba(61, 38, 8, 0.25), inset 0 0 70px rgba(184, 134, 11, 0.2);
+        }
+
+        .door-overlay.opened .door-right {
+            transform: rotateY(105deg);
+        }
+
+        .door-overlay.opened .door-left {
+            transform: rotateY(-105deg);
+        }
+
+        /* زخرفة الإطار الداخلي لكل ضلفة */
+        .door-inner-frame {
+            position: absolute;
+            inset: 14px;
+            border: 2px solid #c59b27;
+            pointer-events: none;
+        }
+        .door-inner-frame::after {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(184, 134, 11, 0.5);
+        }
+
+        /* الختم الذهبي المركزي على الباب */
+        .door-seal-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 110;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.6s ease, opacity 0.5s ease;
+        }
+
+        .door-overlay.opened .door-seal-wrapper {
+            transform: translate(-50%, -50%) scale(1.25);
+            opacity: 0;
+        }
+
+        .royal-seal {
+            width: 175px;
+            height: 175px;
+            border-radius: 9999px;
+            background: radial-gradient(circle at 30% 30%, #fff6d1 0%, #e5c158 35%, #b8860b 80%, #7a5508 100%);
+            box-shadow: 
+                0 15px 35px rgba(61, 38, 8, 0.45),
+                0 0 0 6px rgba(255, 250, 240, 0.85),
+                0 0 0 9px #c59b27,
+                inset 0 4px 12px rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 12px;
+            position: relative;
+            animation: sealPulse 2.5s infinite ease-in-out;
+        }
+
+        @media (min-width: 640px) {
+            .royal-seal {
+                width: 210px;
+                height: 210px;
+            }
+        }
+
+        @keyframes sealPulse {
+            0%, 100% {
+                box-shadow: 
+                    0 15px 35px rgba(61, 38, 8, 0.45),
+                    0 0 0 6px rgba(255, 250, 240, 0.9),
+                    0 0 0 9px #c59b27,
+                    0 0 25px rgba(212, 175, 55, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 
+                    0 20px 45px rgba(61, 38, 8, 0.55),
+                    0 0 0 8px rgba(255, 250, 240, 0.95),
+                    0 0 0 12px #d4af37,
+                    0 0 45px rgba(212, 175, 55, 0.85);
+                transform: scale(1.04);
+            }
+        }
+
+        /* إضاءة ذهبية تتوهج لحظة فتح الباب */
+        .golden-flare {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle, rgba(255, 244, 194, 0.95) 0%, rgba(212, 175, 55, 0.4) 50%, transparent 80%);
+            z-index: 95;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.9s ease;
+        }
+        .golden-flare.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="py-4 px-3 sm:py-8 sm:px-6 flex flex-col items-center justify-center relative">
+
+    <!-- وهج ذهبي لحظة فتح الباب -->
+    <div id="goldenFlare" class="golden-flare" aria-hidden="true"></div>
+
+    <!-- ================= شاشة البوابة الملكية التفاعلية ================= -->
+    <div id="doorOverlay" class="door-overlay" onclick="openInvitationDoor()" role="button" tabindex="0" aria-label="اضغط لفتح الدعوة">
+        
+        <!-- الضلفة اليمنى -->
+        <div class="door-panel door-right">
+            <div class="door-inner-frame"></div>
+            <!-- زخارف هندسية عربية وإسلامية خلفية -->
+            <svg class="w-full h-full opacity-20 text-amber-800" viewBox="0 0 200 400" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="arabesqueRight" width="60" height="60" patternUnits="userSpaceOnUse">
+                        <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+                        <circle cx="30" cy="30" r="14" fill="none" stroke="currentColor" stroke-width="0.8"/>
+                        <path d="M15 15 H45 V45 H15 Z" fill="none" stroke="currentColor" stroke-width="0.6"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#arabesqueRight)"/>
+            </svg>
+            <!-- مقبض الباب الذهبي الأيمن -->
+            <div class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-3 sm:w-4 h-24 sm:h-32 rounded-full bg-gradient-to-b from-amber-300 via-amber-600 to-amber-900 shadow-lg border border-amber-200"></div>
+        </div>
+
+        <!-- الضلفة اليسرى -->
+        <div class="door-panel door-left">
+            <div class="door-inner-frame"></div>
+            <!-- زخارف هندسية عربية وإسلامية خلفية -->
+            <svg class="w-full h-full opacity-20 text-amber-800" viewBox="0 0 200 400" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="arabesqueLeft" width="60" height="60" patternUnits="userSpaceOnUse">
+                        <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+                        <circle cx="30" cy="30" r="14" fill="none" stroke="currentColor" stroke-width="0.8"/>
+                        <path d="M15 15 H45 V45 H15 Z" fill="none" stroke="currentColor" stroke-width="0.6"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#arabesqueLeft)"/>
+            </svg>
+            <!-- مقبض الباب الذهبي الأيسر -->
+            <div class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-3 sm:w-4 h-24 sm:h-32 rounded-full bg-gradient-to-b from-amber-300 via-amber-600 to-amber-900 shadow-lg border border-amber-200"></div>
+        </div>
+
+        <!-- الختم الذهبي المركزي وزر الفتح -->
+        <div class="door-seal-wrapper">
+            <div class="royal-seal">
+                <span class="text-xs sm:text-sm font-bold text-amber-950 tracking-wider mb-0.5">❖ دعوة زفاف ❖</span>
+                <div class="w-16 h-[1px] bg-amber-950/40 my-1"></div>
+                <span class="font-ruqaa text-xl sm:text-2xl font-bold text-[#2e1c05] leading-tight">
+                    أحمد اسماعيل
+                </span>
+                <div class="w-16 h-[1px] bg-amber-950/40 my-1"></div>
+                <span class="mt-1 inline-flex items-center gap-1 bg-amber-950 text-amber-100 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full shadow">
+                    <span>اضغط لفتح الدعوة</span>
+                </span>
+            </div>
+            <p class="mt-5 bg-white/90 backdrop-blur-sm text-amber-950 border border-amber-500/60 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-md animate-bounce">
+                👆 المس الباب للدخول إلى الدعوة
+            </p>
+        </div>
+
+    </div>
+
+    <!-- حاوية البتلات المتساقطة -->
+    <div id="petals-container" aria-hidden="true"></div>
+
+    <!-- شريط التحكم العلوي (زر الصوت/الموسيقى وزر نثر الورود وزر إعادة إغلاق الباب) -->
+    <div class="w-full max-w-xl flex flex-wrap justify-between items-center gap-2 mb-3 z-30 px-1">
+        <div class="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm border border-amber-500/60 px-2 py-1 rounded-full shadow-md">
+            <button id="musicBtn" onclick="toggleMusic()" class="flex items-center gap-1.5 text-amber-900 px-2.5 py-1 rounded-full hover:bg-amber-50 transition text-xs sm:text-sm font-bold">
+                <span id="musicIcon" class="text-base">🎵</span>
+                <span id="musicText">تشغيل الأغنية</span>
+            </button>
+            <button id="muteBtn" onclick="toggleMuteAudio()" class="text-amber-800 hover:bg-amber-100 w-7 h-7 rounded-full flex items-center justify-center transition text-sm" title="كتم / تشغيل الصوت">
+                <span id="muteIcon">🔊</span>
+            </button>
+            <button onclick="openAudioModal()" class="bg-amber-100 border border-amber-400 text-amber-950 px-2.5 py-1 rounded-full hover:bg-amber-200 transition text-xs font-bold" title="اختيار أغنية أو فيديو للتجربة">
+                <span>🎶</span>
+                <span class="hidden sm:inline">تخصيص</span>
+            </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <button onclick="burstPetals()" class="flex items-center gap-1 bg-white/90 backdrop-blur-sm border border-amber-500/50 text-amber-900 px-3 py-2 rounded-full shadow-md hover:bg-amber-50 transition text-xs sm:text-sm font-semibold">
+                <span>✨</span>
+                <span>نثر الورود</span>
+            </button>
+
+            <button onclick="closeInvitationDoor()" class="flex items-center gap-1 bg-amber-900/90 text-amber-50 border border-amber-400/50 px-3 py-2 rounded-full shadow-md hover:bg-amber-800 transition text-xs sm:text-sm font-semibold" title="إعادة إغلاق الباب">
+                <span>🚪</span>
+                <span>إغلاق الباب</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- عنصر الصوت الرئيسي للأغنية (song.mp3) -->
+    <audio id="weddingSong" src="song.mp3" loop preload="auto"></audio>
+
+    <!-- نافذة إعدادات واختيار الأغنية والفيديو للتجربة المحلية -->
+    <div id="audioSettingsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-[#fffdf8] border-2 border-amber-500 rounded-3xl max-w-md w-full p-5 shadow-2xl text-right space-y-4">
+            <div class="flex justify-between items-center border-b border-amber-200 pb-3">
+                <h3 class="text-lg font-extrabold text-amber-950 flex items-center gap-2">
+                    <span>🎶</span>
+                    <span>معاينة الأغنية والفيديو محلياً</span>
+                </h3>
+                <button onclick="closeAudioModal()" class="text-amber-900 hover:bg-amber-100 w-8 h-8 rounded-full font-bold">✕</button>
+            </div>
+
+            <div class="space-y-3 text-sm">
+                <!-- اختيار ملف الأغنية MP3 -->
+                <div class="bg-amber-50/80 border border-amber-300 rounded-2xl p-3">
+                    <label class="block font-bold text-amber-950 mb-1.5">1. تجربة أغنية الزفاف (MP3):</label>
+                    <input type="file" id="mp3FileInput" accept="audio/*" onchange="handleLocalMp3(event)" class="w-full text-xs text-amber-900 file:ml-3 file:py-2 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-amber-700 file:text-white hover:file:bg-amber-800 cursor-pointer">
+                    <p class="text-[11px] text-amber-800 mt-1">* عند الرفع على الإنترنت ضع ملف الأغنية باسم <b>song.mp3</b> بجانب الصفحة.</p>
+                </div>
+
+                <!-- اختيار ملف الفيديو MP4 -->
+                <div class="bg-amber-50/80 border border-amber-300 rounded-2xl p-3">
+                    <label class="block font-bold text-amber-950 mb-1.5">2. تجربة فيديو العريس الصامت (MP4):</label>
+                    <input type="file" id="videoFileInput" accept="video/*" onchange="handleLocalVideo(event)" class="w-full text-xs text-amber-900 file:ml-3 file:py-2 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-amber-700 file:text-white hover:file:bg-amber-800 cursor-pointer">
+                    <p class="text-[11px] text-amber-800 mt-1">* عند الرفع على الإنترنت ضع ملف الفيديو باسم <b>video.mp4</b> بجانب الصفحة.</p>
+                </div>
+
+                <!-- رابط أغنية مباشر -->
+                <div class="bg-amber-50/80 border border-amber-300 rounded-2xl p-3">
+                    <label class="block font-bold text-amber-950 mb-1.5">3. أو رابط أغنية مباشر (URL):</label>
+                    <div class="flex gap-2">
+                        <input type="url" id="mp3UrlInput" placeholder="https://example.com/song.mp3" dir="ltr" class="flex-1 bg-white border border-amber-400 rounded-xl px-3 py-1.5 text-xs text-left focus:outline-none">
+                        <button onclick="applyMp3Url()" class="bg-amber-700 hover:bg-amber-800 text-white px-3 py-1.5 rounded-xl text-xs font-bold">تطبيق</button>
+                    </div>
+                </div>
+
+                <button onclick="useBuiltInOrchestra()" class="w-full bg-white border border-amber-500 text-amber-950 hover:bg-amber-100 py-2.5 rounded-xl font-bold text-xs transition">
+                    🎹 استخدام معزوفة الزفاف الأوركسترالية المدمجة
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- البطاقة الملكية الرئيسية -->
+    <main class="royal-card gold-double-border w-full max-w-xl rounded-3xl p-4 sm:p-8 overflow-hidden z-20">
+        
+        <!-- زخرفة الزاوية العلوية اليمنى (إطار إسلامي ذهبي) -->
+        <svg class="absolute top-2 right-2 w-20 h-20 sm:w-28 sm:h-28 text-amber-600/75 pointer-events-none" viewBox="0 0 100 100" fill="none">
+            <path d="M95 5 H35 C20 5 15 15 15 25 C5 25 5 35 5 45 V95" stroke="currentColor" stroke-width="2"/>
+            <path d="M90 12 H45 C32 12 28 20 28 28 C20 28 12 32 12 45 V90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2"/>
+            <circle cx="82" cy="18" r="4" fill="#d4af37"/>
+            <path d="M82 8 V28 M72 18 H92" stroke="#b8860b" stroke-width="1.5"/>
+            <path d="M65 12 Q55 25 40 20 Q50 32 45 45 Q32 40 20 50 Q25 35 12 35" fill="rgba(212, 175, 55, 0.25)" stroke="#b8860b" stroke-width="1"/>
+        </svg>
+
+        <!-- باقة الورود البيضاء والذهبية في الزاوية العلوية اليسرى -->
+        <svg class="absolute -top-2 -left-2 w-28 h-28 sm:w-36 sm:h-36 pointer-events-none drop-shadow-md" viewBox="0 0 160 160" fill="none">
+            <!-- أوراق شجر ذهبية وزيتونية -->
+            <path d="M40 80 C20 100 15 125 25 140 C35 125 45 105 40 80 Z" fill="#6b7c45"/>
+            <path d="M85 35 C105 15 130 10 145 20 C130 30 110 40 85 35 Z" fill="#6b7c45"/>
+            <path d="M75 65 C95 75 115 70 125 60 C110 55 90 55 75 65 Z" fill="#8c9c5e"/>
+            <path d="M55 85 C65 105 60 125 50 135 C45 120 45 100 55 85 Z" fill="#8c9c5e"/>
+            <!-- الوردة الكبيرة الأولى (كريمي وذهبي) -->
+            <circle cx="48" cy="48" r="32" fill="#fdf5e6" stroke="#d4af37" stroke-width="1.5"/>
+            <path d="M48 22 C62 22 72 34 72 48 C72 62 62 72 48 72 C34 72 24 62 24 48 C24 34 34 22 48 22 Z" fill="#f7e6c4" stroke="#c59b27" stroke-width="1"/>
+            <path d="M48 30 C58 30 64 38 64 48 C64 58 58 64 48 64 C38 64 32 58 32 48 C32 38 38 30 48 30 Z" fill="#edd19b" stroke="#b8860b" stroke-width="1"/>
+            <path d="M48 38 C53 38 56 42 56 48 C56 53 53 56 48 56 C43 56 40 53 40 48 C40 42 43 38 48 38 Z" fill="#dfb362"/>
+            <!-- الوردة الثانية -->
+            <circle cx="88" cy="34" r="20" fill="#fffaf0" stroke="#d4af37" stroke-width="1.2"/>
+            <circle cx="88" cy="34" r="12" fill="#f2dcb1" stroke="#b8860b" stroke-width="1"/>
+            <circle cx="88" cy="34" r="6" fill="#d9a84e"/>
+            <!-- أزهار صغيرة بيضاء -->
+            <circle cx="26" cy="86" r="7" fill="#ffffff" stroke="#d4af37" stroke-width="1"/>
+            <circle cx="26" cy="86" r="2.5" fill="#d4af37"/>
+            <circle cx="108" cy="48" r="6" fill="#ffffff" stroke="#d4af37" stroke-width="1"/>
+            <circle cx="108" cy="48" r="2" fill="#d4af37"/>
+        </svg>
+
+        <!-- باقة الورود البيضاء في الزاوية السفلية اليمنى -->
+        <svg class="absolute -bottom-2 -right-2 w-28 h-28 sm:w-36 sm:h-36 pointer-events-none drop-shadow-md transform rotate-180" viewBox="0 0 160 160" fill="none">
+            <path d="M40 80 C20 100 15 125 25 140 C35 125 45 105 40 80 Z" fill="#6b7c45"/>
+            <path d="M85 35 C105 15 130 10 145 20 C130 30 110 40 85 35 Z" fill="#6b7c45"/>
+            <path d="M75 65 C95 75 115 70 125 60 C110 55 90 55 75 65 Z" fill="#8c9c5e"/>
+            <circle cx="48" cy="48" r="32" fill="#fdf5e6" stroke="#d4af37" stroke-width="1.5"/>
+            <path d="M48 22 C62 22 72 34 72 48 C72 62 62 72 48 72 C34 72 24 62 24 48 C24 34 34 22 48 22 Z" fill="#f7e6c4" stroke="#c59b27" stroke-width="1"/>
+            <path d="M48 30 C58 30 64 38 64 48 C64 58 58 64 48 64 C38 64 32 58 32 48 C32 38 38 30 48 30 Z" fill="#edd19b" stroke="#b8860b" stroke-width="1"/>
+            <circle cx="88" cy="34" r="20" fill="#fffaf0" stroke="#d4af37" stroke-width="1.2"/>
+            <circle cx="88" cy="34" r="11" fill="#f2dcb1" stroke="#b8860b" stroke-width="1"/>
+            <circle cx="26" cy="86" r="7" fill="#ffffff" stroke="#d4af37" stroke-width="1"/>
+            <circle cx="26" cy="86" r="2.5" fill="#d4af37"/>
+        </svg>
+
+        <!-- زخرفة الزاوية السفلية اليسرى -->
+        <svg class="absolute bottom-2 left-2 w-20 h-20 sm:w-28 sm:h-28 text-amber-600/75 pointer-events-none transform rotate-180" viewBox="0 0 100 100" fill="none">
+            <path d="M95 5 H35 C20 5 15 15 15 25 C5 25 5 35 5 45 V95" stroke="currentColor" stroke-width="2"/>
+            <path d="M90 12 H45 C32 12 28 20 28 28 C20 28 12 32 12 45 V90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2"/>
+            <circle cx="82" cy="18" r="4" fill="#d4af37"/>
+        </svg>
+
+        <!-- محتوى الدعوة الداخلي -->
+        <div class="relative z-10 flex flex-col items-center text-center pt-3 pb-2 px-2 sm:px-6">
+            
+            <!-- البسملة -->
+            <div class="mb-2 mt-1">
+                <h2 class="font-ruqaa text-2xl sm:text-3xl md:text-4xl text-gold-gradient tracking-wide py-1">
+                    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+                </h2>
+            </div>
+
+            <!-- الآية القرآنية -->
+            <div class="max-w-md mx-auto mb-3 px-2">
+                <p class="font-amiri text-base sm:text-lg md:text-xl font-bold leading-relaxed text-[#3d2608]">
+                    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ"
+                </p>
+            </div>
+
+            <!-- فاصل زخرفي ذهبي -->
+            <div class="flex items-center justify-center gap-2 w-48 my-1">
+                <span class="h-[1.5px] flex-1 bg-gradient-to-r from-transparent to-amber-600"></span>
+                <span class="text-amber-600 text-xs">❖</span>
+                <span class="text-amber-700 text-sm">✦</span>
+                <span class="text-amber-600 text-xs">❖</span>
+                <span class="h-[1.5px] flex-1 bg-gradient-to-l from-transparent to-amber-600"></span>
+            </div>
+
+            <!-- خواتم الزفاف الذهبية المتداخلة -->
+            <div class="rings-float my-1.5" aria-hidden="true">
+                <svg class="w-20 h-12 sm:w-24 sm:h-14 drop-shadow" viewBox="0 0 120 70" fill="none">
+                    <defs>
+                        <linearGradient id="ringGold1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fff0a6"/>
+                            <stop offset="35%" stop-color="#d4af37"/>
+                            <stop offset="70%" stop-color="#8a620b"/>
+                            <stop offset="100%" stop-color="#f7dc79"/>
+                        </linearGradient>
+                        <linearGradient id="ringGold2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#fce88d"/>
+                            <stop offset="45%" stop-color="#c59b27"/>
+                            <stop offset="80%" stop-color="#7a5508"/>
+                            <stop offset="100%" stop-color="#ffe98a"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- الخاتم الأول -->
+                    <ellipse cx="44" cy="36" rx="24" ry="20" stroke="url(#ringGold1)" stroke-width="5.5"/>
+                    <ellipse cx="44" cy="36" rx="21.5" ry="17.5" stroke="#fff9d6" stroke-width="0.8" opacity="0.7"/>
+                    <!-- الخاتم الثاني متداخل -->
+                    <ellipse cx="76" cy="38" rx="24" ry="20" stroke="url(#ringGold2)" stroke-width="5.5"/>
+                    <ellipse cx="76" cy="38" rx="21.5" ry="17.5" stroke="#fff9d6" stroke-width="0.8" opacity="0.7"/>
+                    <!-- ماسة وبريق على الخاتم -->
+                    <polygon points="44,10 49,15 44,20 39,15" fill="#ffffff" stroke="#d4af37" stroke-width="1"/>
+                    <path d="M44 4 V11 M37 15 H41 M47 15 H51" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <!-- نص الدعوة وأسماء الداعين -->
+            <div class="space-y-1.5 my-2 w-full">
+                <p class="text-lg sm:text-xl font-bold text-amber-900">يتشرف</p>
+                
+                <div class="space-y-1 text-lg sm:text-xl md:text-2xl font-extrabold text-[#2e1c05] leading-snug">
+                    <p>الحاج / اسماعيل كعروب</p>
+                    <p>والحاج / خلف كعروب</p>
+                    <p>والحاج / عوض كعروب</p>
+                    <p>والحاج / شعبان كعروب</p>
+                    <p>والحاج / السيد كعروب</p>
+                </div>
+
+                <p class="text-base sm:text-lg md:text-xl font-bold text-amber-950 pt-2">
+                    بدعوتكم لحضور حفل زفاف نجلهم
+                </p>
+            </div>
+
+            <!-- إطار فيديو العريس الملكي المذهب (يعمل تلقائياً بدون صوت) -->
+            <div class="w-full flex flex-col items-center my-3">
+                <div class="relative p-1.5 sm:p-2 rounded-3xl bg-gradient-to-br from-[#fff0a6] via-[#c59b27] to-[#7a5508] shadow-xl">
+                    <!-- زوايا زخرفية للإطار -->
+                    <div class="relative w-48 h-64 sm:w-56 sm:h-72 rounded-2xl overflow-hidden bg-amber-950/90 border-2 border-amber-200/80 shimmer-effect flex items-center justify-center">
+                        <video id="groomVideo" src="video.mp4" autoplay loop muted playsinline class="w-full h-full object-cover z-10"></video>
+                        
+                        <!-- خلفية بديلة تظهر أثناء تحميل الفيديو أو قبل اختياره -->
+                        <div id="videoFallback" class="absolute inset-0 flex flex-col items-center justify-center text-center p-3 bg-gradient-to-b from-amber-900/90 to-amber-950 text-amber-100 z-0">
+                            <span class="text-3xl mb-2">🤵🏻✨</span>
+                            <span class="text-xs font-bold text-amber-200">فيديو العريس</span>
+                            <span class="text-[10px] text-amber-300/80 mt-1">(video.mp4)</span>
+                        </div>
+
+                        <!-- زر صغير لاختيار الفيديو محلياً للتجربة -->
+                        <button onclick="document.getElementById('videoFileInput').click()" class="absolute bottom-2 left-2 z-20 bg-black/55 hover:bg-black/80 backdrop-blur-sm text-amber-100 border border-amber-400/50 text-[10px] font-bold px-2.5 py-1 rounded-full transition flex items-center gap-1" title="معاينة فيديو من جهازك">
+                            <span>🎬</span>
+                            <span>تغيير الفيديو</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- إطار اسم العريس الملكي البارز -->
+            <div class="groom-banner shimmer-effect w-full rounded-2xl py-4 px-4 my-2 relative">
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span class="text-base sm:text-lg md:text-xl font-extrabold text-[#2e1c05]">
+                        يوم الجمعة الموافق 20 نوفمبر 2026
+                    </span>
+                </div>
+
+                <!-- المكان -->
+                <div class="inline-flex items-center justify-center gap-2.5 bg-amber-50/90 border border-amber-400/60 rounded-xl px-4 py-2 shadow-sm w-full sm:w-auto">
+                    <svg class="w-6 h-6 text-amber-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="text-base sm:text-lg md:text-xl font-extrabold text-[#2e1c05]">
+                        بقاعة اليزيه - تحت كوبري ابيس
+                    </span>
+                </div>
+            </div>
+
+            <!-- شريط الخاتمة الذهبي -->
+            <div class="gold-ribbon text-white rounded-full px-6 py-2 my-3 shadow-md">
+                <p class="text-sm sm:text-base md:text-lg font-bold tracking-wide">
+                    ❖ وبحضوركم يتم لنا الفرح والسرور ❖
+                </p>
+            </div>
+
+            <!-- عبارات الترحيب الختامية -->
+            <div class="mt-1 mb-2 space-y-1">
+                <p class="text-base sm:text-lg font-bold text-[#3d2608]">
+                    حضوركم شرف لنا ونشرف بكم
+                </p>
+                <p class="font-ruqaa text-2xl sm:text-3xl text-gold-gradient pt-1">
+                    أَهْلاً وَسَهْلاً بِكُمْ
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- القسم التفاعلي أسفل البطاقة -->
+    <section class="w-full max-w-xl mt-5 space-y-4 z-20">
+        
+        <!-- 1. العداد التنازلي الحي -->
+        <div class="bg-white/90 backdrop-blur-md border border-amber-400/60 rounded-2xl p-4 shadow-lg text-center">
+            <h3 class="text-sm sm:text-base font-bold text-amber-900 mb-3 flex items-center justify-center gap-2">
+                <span>⏳</span>
+                <span>العد التنازلي لموعد الفرح</span>
+            </h3>
+            <div id="countdown" class="grid grid-cols-4 gap-2 sm:gap-3" dir="ltr">
+                <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-amber-300 rounded-xl p-2 sm:p-3">
+                    <div id="days" class="text-xl sm:text-3xl font-extrabold text-amber-900">00</div>
+                    <div class="text-xs sm:text-sm font-semibold text-amber-800 mt-0.5">يوم</div>
+                </div>
+                <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-amber-300 rounded-xl p-2 sm:p-3">
+                    <div id="hours" class="text-xl sm:text-3xl font-extrabold text-amber-900">00</div>
+                    <div class="text-xs sm:text-sm font-semibold text-amber-800 mt-0.5">ساعة</div>
+                </div>
+                <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-amber-300 rounded-xl p-2 sm:p-3">
+                    <div id="minutes" class="text-xl sm:text-3xl font-extrabold text-amber-900">00</div>
+                    <div class="text-xs sm:text-sm font-semibold text-amber-800 mt-0.5">دقيقة</div>
+                </div>
+                <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-amber-300 rounded-xl p-2 sm:p-3">
+                    <div id="seconds" class="text-xl sm:text-3xl font-extrabold text-amber-900">00</div>
+                    <div class="text-xs sm:text-sm font-semibold text-amber-800 mt-0.5">ثانية</div>
+                </div>
+            </div>
+            <p id="eventStatusMsg" class="hidden text-base font-bold text-amber-800 mt-2"></p>
+        </div>
+
+        <!-- 2. أزرار التفاعل (الموقع - التقويم - المشاركة - النسخ) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- زر خرائط جوجل -->
+            <a href="https://www.google.com/maps/search/?api=1&query=قاعة+اليزيه+تحت+كوبري+ابيس+الاسكندرية" target="_blank" rel="noopener noreferrer" 
+               class="btn-royal rounded-2xl py-3.5 px-4 flex items-center justify-center gap-2.5 font-bold text-sm sm:text-base">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>موقع القاعة على الخريطة</span>
+            </a>
+
+            <!-- زر إضافة للتقويم -->
+            <button onclick="addToCalendar()" 
+                    class="btn-outline-royal rounded-2xl py-3.5 px-4 flex items-center justify-center gap-2.5 font-bold text-sm sm:text-base shadow-sm">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                    <line x1="12" y1="14" x2="12" y2="18"></line>
+                    <line x1="10" y1="16" x2="14" y2="16"></line>
+                </svg>
+                <span>إضافة الموعد للتقويم</span>
+            </button>
+
+            <!-- زر مشاركة عبر واتساب -->
+            <button onclick="shareWhatsApp()" 
+                    class="bg-[#1f8b4c] hover:bg-[#19733f] text-white rounded-2xl py-3.5 px-4 flex items-center justify-center gap-2.5 font-bold text-sm sm:text-base shadow-md transition transform hover:-translate-y-0.5">
+                <svg class="w-5 h-5 shrink-0 fill-current" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                </svg>
+                <span>مشاركة عبر واتساب</span>
+            </button>
+
+            <!-- زر نسخ نص الدعوة -->
+            <button onclick="copyInvitation()" 
+                    class="btn-outline-royal rounded-2xl py-3.5 px-4 flex items-center justify-center gap-2.5 font-bold text-sm sm:text-base shadow-sm">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>نسخ نص الدعوة</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- مربع إشعارات مخصص (بديل لـ alert) -->
+    <div id="toastMessage" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-amber-950 text-amber-50 border border-amber-400 px-5 py-3 rounded-2xl shadow-2xl text-sm font-bold z-50 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+        <span>✨</span>
+        <span id="toastText">تم النسخ بنجاح!</span>
+    </div>
+
+    <script>
+        // 1. دالة عرض الإشعارات المخصصة
+        function showToast(message) {
+            const toast = document.getElementById('toastMessage');
+            const toastText = document.getElementById('toastText');
+            toastText.textContent = message;
+            toast.classList.remove('opacity-0', 'translate-y-3');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-3');
+            }, 3200);
+        }
+
+        // 2. العداد التنازلي حتى يوم الجمعة 20 نوفمبر 2026 (الساعة 8:00 مساءً بتوقيت مصر)
+        const weddingDate = new Date('2026-11-20T20:00:00+02:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            const statusMsg = document.getElementById('eventStatusMsg');
+
+            if (distance <= 0) {
+                daysEl.textContent = '00';
+                hoursEl.textContent = '00';
+                minutesEl.textContent = '00';
+                secondsEl.textContent = '00';
+                statusMsg.textContent = '🎉 بارك الله لهما وبارك عليهما وجمع بينهما في خير! 🎉';
+                statusMsg.classList.remove('hidden');
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            daysEl.textContent = String(days).padStart(2, '0');
+            hoursEl.textContent = String(hours).padStart(2, '0');
+            minutesEl.textContent = String(minutes).padStart(2, '0');
+            secondsEl.textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3. نص الدعوة الكامل للمشاركة والنسخ
+        const invitationFullText = `بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+
+يتشرف:
+الحاج / اسماعيل كعروب
+والحاج / خلف كعروب
+والحاج / عوض كعروب
+والحاج / شعبان كعروب
+والحاج / السيد كعروب
+
+بدعوتكم لحضور حفل زفاف نجلهم
+✨ العريس / أحمد اسماعيل ✨
+
+وذلك بمشيئة الله تعالى:
+📅 يوم الجمعة الموافق 20 نوفمبر 2026
+📍 بقاعة اليزيه - تحت كوبري ابيس
+🗺️ رابط الموقع على الخريطة:
+https://www.google.com/maps/search/?api=1&query=قاعة+اليزيه+تحت+كوبري+ابيس+الاسكندرية
+
+وبحضوركم يتم لنا الفرح والسرور.. أهلاً وسهلاً بكم.`;
+
+        // 4. مشاركة الدعوة عبر واتساب
+        function shareWhatsApp() {
+            const url = `https://wa.me/?text=${encodeURIComponent(invitationFullText)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // 5. نسخ نص الدعوة (باستخدام execCommand لضمان العمل في جميع البيئات)
+        function copyInvitation() {
+            const textArea = document.createElement('textarea');
+            textArea.value = invitationFullText;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast('تم نسخ نص الدعوة بنجاح لمشاركته!');
+            } catch (err) {
+                showToast('تعذر النسخ تلقائياً، يرجى المحاولة مرة أخرى.');
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // 6. إضافة الموعد للتقويم (.ics)
+        function addToCalendar() {
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Wedding Invitation//Ahmed Ismail//AR',
+                'BEGIN:VEVENT',
+                'DTSTART:20261120T180000Z',
+                'DTEND:20261120T220000Z',
+                'SUMMARY:حفل زفاف العريس أحمد اسماعيل',
+                'DESCRIPTION:يتشرف الحاج / اسماعيل كعروب وإخوته بدعوتكم لحضور حفل زفاف نجلهم العريس أحمد اسماعيل بقاعة اليزيه - تحت كوبري ابيس.',
+                'LOCATION:قاعة اليزيه - تحت كوبري ابيس، الإسكندرية',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'wedding_ahmed_ismail.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('تم تجهيز ملف التقويم لحفظ الموعد!');
+        }
+
+        // 7. توليد بتلات الورد والنجوم الذهبية المتساقطة
+        function createPetal() {
+            const container = document.getElementById('petals-container');
+            if (!container) return;
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            const shapes = ['🌸', '✨', '🌼', '💛'];
+            petal.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.fontSize = (Math.random() * 12 + 12) + 'px';
+            const duration = Math.random() * 4 + 4;
+            petal.style.animationDuration = duration + 's';
+            container.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createPetal, 1800);
+
+        // دفعة احتفالية عند الضغط على زر نثر الورود
+        function burstPetals() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createPetal, i * 90);
+            }
+        }
+
+        // 8. التحكم في فتح وإغلاق باب الدعوة التفاعلي
+        let isDoorOpened = false;
+
+        function openInvitationDoor() {
+            if (isDoorOpened) return;
+            isDoorOpened = true;
+
+            const doorOverlay = document.getElementById('doorOverlay');
+            const goldenFlare = document.getElementById('goldenFlare');
+            const groomVideo = document.getElementById('groomVideo');
+
+            // تشغيل الأغنية (song.mp3) تلقائياً بمجرد الضغط على الباب
+            startWeddingAudio();
+
+            // ضمان تشغيل فيديو العريس الصامت
+            if (groomVideo) {
+                groomVideo.muted = true;
+                groomVideo.play().catch(() => {});
+            }
+
+            // إظهار وهج ذهبي خفيف
+            goldenFlare.classList.add('active');
+            setTimeout(() => {
+                goldenFlare.classList.remove('active');
+            }, 950);
+
+            // فتح ضلفتي الباب
+            doorOverlay.classList.add('opened');
+
+            // نثر الورود الذهبية ترحيباً بالضيف
+            setTimeout(() => {
+                burstPetals();
+            }, 500);
+        }
+
+        function closeInvitationDoor() {
+            isDoorOpened = false;
+            const doorOverlay = document.getElementById('doorOverlay');
+            doorOverlay.classList.remove('opened');
+        }
+
+        // دعم فتح الباب بلوحة المفاتيح (Enter / Space)
+        document.getElementById('doorOverlay').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openInvitationDoor();
+            }
+        });
+
+        // 9. نظام الصوت المتكامل (song.mp3 + معزوفة أوركسترالية احتياطية)
+        let isPlaying = false;
+        let isMuted = false;
+        let audioMode = 'auto';
+        let orchestraSynth = null;
+        let padSynth = null;
+        let melodyLoop = null;
+        const weddingSong = document.getElementById('weddingSong');
+
+        // محاولة التشغيل التلقائي عند تحميل الصفحة إن سمح المتصفح
+        window.addEventListener('DOMContentLoaded', () => {
+            weddingSong.play().then(() => {
+                audioMode = 'mp3';
+                updateMusicUI(true, 'إيقاف الأغنية');
+            }).catch(() => {
+                // في انتظار لمس البوابة الذهبية لتشغيل الأغنية فوراً
+            });
+        });
+
+        function updateMusicUI(playing, label = null) {
+            const musicBtn = document.getElementById('musicBtn');
+            const musicIcon = document.getElementById('musicIcon');
+            const musicText = document.getElementById('musicText');
+            isPlaying = playing;
+
+            if (playing) {
+                musicIcon.textContent = '⏸️';
+                musicText.textContent = label || 'إيقاف الأغنية';
+                musicBtn.classList.add('bg-amber-100');
+            } else {
+                musicIcon.textContent = '🎵';
+                musicText.textContent = label || 'تشغيل الأغنية';
+                musicBtn.classList.remove('bg-amber-100');
+            }
+        }
+
+        function toggleMuteAudio() {
+            isMuted = !isMuted;
+            weddingSong.muted = isMuted;
+            Tone.Destination.mute = isMuted;
+            document.getElementById('muteIcon').textContent = isMuted ? '🔇' : '🔊';
+            showToast(isMuted ? 'تم كتم الصوت' : 'تم تشغيل الصوت');
+        }
+
+        async function startBuiltInOrchestra() {
+            await Tone.start();
+            if (!orchestraSynth) {
+                const reverb = new Tone.Reverb({ decay: 2.8, wet: 0.45 }).toDestination();
+                
+                orchestraSynth = new Tone.PolySynth(Tone.Synth, {
+                    oscillator: { type: 'triangle' },
+                    envelope: { attack: 0.18, decay: 0.3, sustain: 0.5, release: 1.6 },
+                    volume: -9
+                }).connect(reverb);
+
+                padSynth = new Tone.PolySynth(Tone.Synth, {
+                    oscillator: { type: 'sine' },
+                    envelope: { attack: 0.8, decay: 0.5, sustain: 0.7, release: 2.2 },
+                    volume: -16
+                }).connect(reverb);
+
+                const zaffaMelody = [
+                    { note: 'G4', chord: ['C3', 'G3', 'E4'], dur: '4n' },
+                    { note: 'C5', chord: null, dur: '4n' },
+                    { note: 'C5', chord: null, dur: '4n' },
+                    { note: 'C5', chord: null, dur: '4n' },
+                    { note: 'D5', chord: ['F3', 'A3', 'D4'], dur: '4n' },
+                    { note: 'C5', chord: null, dur: '8n' },
+                    { note: 'B4', chord: null, dur: '8n' },
+                    { note: 'C5', chord: ['C3', 'G3', 'E4'], dur: '2n' },
+                    { note: 'A4', chord: ['F3', 'C4', 'A4'], dur: '4n' },
+                    { note: 'D5', chord: null, dur: '4n' },
+                    { note: 'C5', chord: null, dur: '4n' },
+                    { note: 'B4', chord: null, dur: '4n' },
+                    { note: 'C5', chord: ['G3', 'B3', 'D4'], dur: '4n' },
+                    { note: 'B4', chord: null, dur: '8n' },
+                    { note: 'A4', chord: null, dur: '8n' },
+                    { note: 'G4', chord: ['C3', 'E3', 'G3'], dur: '2n' }
+                ];
+
+                let step = 0;
+                melodyLoop = new Tone.Loop((time) => {
+                    const current = zaffaMelody[step % zaffaMelody.length];
+                    orchestraSynth.triggerAttackRelease(current.note, current.dur, time);
+                    if (current.chord) {
+                        padSynth.triggerAttackRelease(current.chord, '1m', time);
+                    }
+                    step++;
+                }, '4n');
+            }
+
+            Tone.Transport.bpm.value = 92;
+            melodyLoop.start(0);
+            Tone.Transport.start();
+            audioMode = 'orchestra';
+            updateMusicUI(true, 'إيقاف المعزوفة');
+        }
+
+        function stopAllAudio() {
+            weddingSong.pause();
+            Tone.Transport.stop();
+            if (melodyLoop) melodyLoop.stop();
+            updateMusicUI(false, 'تشغيل الأغنية');
+        }
+
+        async function startWeddingAudio() {
+            if (audioMode === 'orchestra') {
+                await startBuiltInOrchestra();
+                return;
+            }
+
+            try {
+                await weddingSong.play();
+                audioMode = 'mp3';
+                updateMusicUI(true, 'إيقاف الأغنية');
+            } catch (err) {
+                await startBuiltInOrchestra();
+            }
+        }
+
+        async function toggleMusic() {
+            if (!isPlaying) {
+                await startWeddingAudio();
+            } else {
+                stopAllAudio();
+            }
+        }
+
+        // دوال نافذة اختيار الأغنية والفيديو محلياً
+        function openAudioModal() {
+            const modal = document.getElementById('audioSettingsModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAudioModal() {
+            const modal = document.getElementById('audioSettingsModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        async function handleLocalMp3(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            stopAllAudio();
+            weddingSong.src = URL.createObjectURL(file);
+            audioMode = 'mp3';
+            await startWeddingAudio();
+            closeAudioModal();
+            showToast(`تم تشغيل الأغنية: ${file.name}`);
+        }
+
+        function handleLocalVideo(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const groomVideo = document.getElementById('groomVideo');
+            groomVideo.src = URL.createObjectURL(file);
+            groomVideo.muted = true;
+            groomVideo.play().catch(() => {});
+            closeAudioModal();
+            showToast(`تم عرض الفيديو: ${file.name}`);
+        }
+
+        async function applyMp3Url() {
+            const url = document.getElementById('mp3UrlInput').value.trim();
+            if (!url) {
+                showToast('يرجى إدخال رابط MP3 صحيح أولاً');
+                return;
+            }
+            stopAllAudio();
+            weddingSong.src = url;
+            audioMode = 'mp3';
+            await startWeddingAudio();
+            closeAudioModal();
+            showToast('تم تفعيل رابط الأغنية بنجاح!');
+        }
+
+        async function useBuiltInOrchestra() {
+            stopAllAudio();
+            audioMode = 'orchestra';
+            await startBuiltInOrchestra();
+            closeAudioModal();
+            showToast('تم تفعيل معزوفة الزفاف الأوركسترالية');
+        }
+    </script>
+</body>
+</html>
